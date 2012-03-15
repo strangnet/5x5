@@ -1,3 +1,4 @@
+# Code from the book 'CoffeeScript' by Trevor Burnham
 stdin = process.openStdin()
 stdin.setEncoding 'utf8'
 
@@ -5,20 +6,20 @@ inputCallback = null
 stdin.on 'data', (input) -> inputCallback input
 
 promptForTile1 = -> 
-    console.log "Please enter coordinates for the first tile."
-    inputCallback = (input) ->
-        promptForTile2() if strToCoordinates input
+  console.log "Please enter coordinates for the first tile."
+  inputCallback = (input) ->
+    promptForTile2() if strToCoordinates input
 
 promptForTile2 = ->
-    console.log "Please enter coordinates for the second tile."
-    inputCallback = (input) ->
-        if strToCoordinates input
-            console.log "Swapping tiles...dome!"
-            promptForTile1()
+  console.log "Please enter coordinates for the second tile."
+  inputCallback = (input) ->
+    if strToCoordinates input
+      console.log "Swapping tiles...dome!"
+      promptForTile1()
 
 GRID_SIZE = 5
 inRange = (x, y) ->
-    0 <= x < GRID_SIZE and 0 <= y < GRID_SIZE
+  0 <= x < GRID_SIZE and 0 <= y < GRID_SIZE
 
 isInteger = (num) ->
 	num is Math.round(num)
@@ -35,7 +36,7 @@ strToCoordinates = (input) ->
 		else
 			{x, y}
 	else
-		console.log 'Inout must be of the form `x, y`.'
+		console.log 'Input must be of the form `x, y`.'
 
 console.log "Welcome to 5x5!"
 promptForTile1()
