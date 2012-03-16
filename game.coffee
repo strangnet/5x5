@@ -62,7 +62,7 @@ score = 0
 usedWords = []
 
 scoreMove = (grid, swapCoordinates) ->
-  {x1, x2, y1, y2} = swapCoordinates
+  {x1, y1, x2, y2} = swapCoordinates
   words = wordsThroughTile(grid, x1, y1).concat wordsThroughTile(grid, x2, y2)
   moveScore = multiplier = 0
   newWords = []
