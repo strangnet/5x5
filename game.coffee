@@ -100,7 +100,7 @@ wordsThroughTile = (grid, x, y) ->
 console.log "Welcome to 5x5!"
 for x in [0...GRID_SIZE]
   for y in [0...GRID_SIZE]
-    scoreMove grid, {x1: x, x2: x, y1: y, y2: y}
+    scoreMove grid, {x1: x, y1: y, x2: x, y2: y}
 unless usedWords.length is 0
   console.log """
     Initially used words:
